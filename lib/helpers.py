@@ -80,7 +80,8 @@ def list_dishes():
         dish = Dish.get_all()
         for dish in dish:
             print(dish)
-
+        else:
+            print('not found')
 
     
 def find_dish_by_name():
@@ -117,7 +118,7 @@ def create_dish():
    
 def update_dish():
         id_ = input("Enter the dish's id: ")
-        if dish := dish.find_by_id(id_):
+        if dish := Dish.find_by_id(id_):
             try:
                 name = input("Enter the new name of the Dish: ")
                 dish.name = name
