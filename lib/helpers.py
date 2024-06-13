@@ -1,13 +1,15 @@
+#import models to use in this file
 from models.restaurant import Restaurant
 from models.dishes import Dish
 
 
-
+#exit program
 def exit_program():
     print('EXITING PROGAM')
     exit()
 
 
+#list all restaurants
 def list_restaurants():
     restaurants = Restaurant.get_all()
     if restaurants:
@@ -16,7 +18,8 @@ def list_restaurants():
     else:
         print('No added Restaurants')
 
-    
+
+#find restaurant by name
 def find_restaurant_by_name():
     name = input("Enter the Restaurant's name: ")
     restaurant = Restaurant.find_by_name(name)
@@ -26,7 +29,7 @@ def find_restaurant_by_name():
         print(f'{name} not found')
 
 
-    
+#find restaurant by id
 def find_restaurant_by_id():
         id_ = input("Enter the Restaurant's id: ")
         restaurant = Restaurant.find_by_id(id_)
@@ -36,7 +39,7 @@ def find_restaurant_by_id():
             print(f'{id_} not found')
 
 
-     
+#create restaurant
 def create_restaurant():
         name = input("Enter the Restaurant's name: ")
         location = input("Enter the Restaurant's location: ")
@@ -48,7 +51,7 @@ def create_restaurant():
             print("Error creating Restaurant: ", exc)
 
 
-     
+#update restaurant
 def update_restaurant():
         id_ = input("Enter the Restaurant's id: ")
         if restaurant := Restaurant.find_by_id(id_):
@@ -67,7 +70,7 @@ def update_restaurant():
             print(f'Restaurant {id_} not found')
 
 
-       
+#delete restaurant
 def delete_restaurant():
         id_ = input("Enter the Restaurant's id: ")
         if restaurant := Restaurant.find_by_id(id_):
@@ -77,7 +80,7 @@ def delete_restaurant():
             print(f'{id_} not found')
 
 
-    
+#list all dishes
 def list_dishes():
         dish = Dish.get_all()
         if dish:
@@ -86,7 +89,8 @@ def list_dishes():
         else:
             print('No added Dishes')
 
-    
+
+#find dish by name
 def find_dish_by_name():
         name = input("Enter the name of the Dish: ")
         dish = Dish.find_by_name(name)
@@ -96,7 +100,7 @@ def find_dish_by_name():
             print(f'{name} not found')
 
 
-               
+#find dish by id 
 def find_dish_by_id():
         id_ = input("Enter the id of the Dish: ")
         dish = dish.find_by_id(id_)
@@ -106,7 +110,7 @@ def find_dish_by_id():
             print(f'{id_} not found')
 
 
-    
+#create dish
 def create_dish():
         name = input("Enter the name of the Dish: ")
         price = input("Enter the price of the Dish: Ksh.")
@@ -118,7 +122,8 @@ def create_dish():
         except Exception as exc:
             print("Error creating Dish: ", exc)
 
-   
+
+#update dish
 def update_dish():
         id_ = input("Enter the dish's id: ")
         if dish := Dish.find_by_id(id_):
@@ -139,7 +144,7 @@ def update_dish():
             print(f'Dish {id_} not found')
 
 
-   
+#delete dish
 def delete_dish():
         id_ = input('Enter the id of the Dish: ')
         if dish := Dish.find_by_id(id_):
@@ -149,7 +154,7 @@ def delete_dish():
             print(f'Dish {id_} not found')
 
 
-    
+#list dishes in a restaurant
 def list_dishes_by_restaurant_id():
         id_ = input('Enter the id of the Restaurant: ')
         if dish := Restaurant.find_by_id(id_):

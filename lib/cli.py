@@ -1,5 +1,6 @@
 
 from helpers import (
+    # import functions from helpers
     exit_program,
     list_restaurants,
     find_restaurant_by_name,
@@ -17,6 +18,8 @@ from helpers import (
 )
 
 def menu():
+    #Print the menu that the user will be interacting with
+    print("WELCOME TO RESTAURANT MANAGEMENT CLI")
     print("Please select an option:")
     print("0: Exit the program")
     print("1: List all restaurants")
@@ -33,6 +36,7 @@ def menu():
     print("12: Delete dish,")
     print("13: List all dishes in a restaurant")
 
+#Main function that runs the program and interacts with the user
 def main():
     while True:
         print('ENTERING PROGRAM')
@@ -70,6 +74,6 @@ def main():
             print("Invalid choice")
 
 
-
+#Call the main function to run the program
 if __name__ == "__main__":
     main()
