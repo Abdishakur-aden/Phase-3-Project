@@ -12,7 +12,8 @@ def list_restaurants():
     restaurants = Restaurant.get_all()
     for restaurant in restaurants:
         print(restaurant)
-
+    else:
+        print('No added Restaurants')
 
     
 def find_restaurant_by_name():
@@ -81,7 +82,7 @@ def list_dishes():
         for dish in dish:
             print(dish)
         else:
-            print('not found')
+            print('No added Dishes')
 
     
 def find_dish_by_name():
@@ -106,7 +107,7 @@ def find_dish_by_id():
     
 def create_dish():
         name = input("Enter the name of the Dish: ")
-        price = input("Enter the price of the Dish: ")
+        price = input("Enter the price of the Dish: Ksh.")
         restaurant_id = input("Enter the Restaurant id of the Dish: ")
         try:
             dish = Dish.create(name, price, restaurant_id)
@@ -150,8 +151,8 @@ def delete_dish():
 def list_dishes_by_restaurant_id():
         id_ = input('Enter the id of the Restaurant: ')
         if dish := Restaurant.find_by_id(id_):
-            dishes = Restaurant.get_dishes()
+            dishes = Dish.get_dishes()
             for dish in dishes:
                 print(dish)
         else:
-            print(f'{id_} not found')
+            print(f'Restaurant {id_} not found')
