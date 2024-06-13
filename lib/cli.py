@@ -59,11 +59,11 @@ def main():
         elif choice == "9":
             find_dish_by_id()
         elif choice == "10":
-            create_dish,()
+            create_dish()
         elif choice == "11":
-            update_dish,()
+            update_dish()
         elif choice == "12":
-            delete_dish,()
+            delete_dish()
         elif choice == "13":
             list_dishes_by_restaurant_id()
         else:

@@ -5,7 +5,6 @@ from models.dishes import Dish
 
 def exit_program():
     print('EXITING PROGAM')
-    print("Goodbye!")
     exit()
 
 
@@ -71,7 +70,7 @@ def delete_restaurant():
         id_ = input("Enter the Restaurant's id: ")
         if restaurant := Restaurant.find_by_id(id_):
             restaurant.delete()
-            print(f'{id_} deleted')
+            print(f'Restaurant id {id_} deleted')
         else:
             print(f'{id_} not found')
 
@@ -133,7 +132,7 @@ def update_dish():
             except Exception as exc:
                 print("Error updating Dish: ", exc)
         else:
-            print(f'{id_} not found')
+            print(f'Dish {id_} not found')
 
 
    
@@ -141,9 +140,9 @@ def delete_dish():
         id_ = input('Enter the id of the Dish: ')
         if dish := Dish.find_by_id(id_):
             dish.delete()
-            print(f'{id_} deleted')
+            print(f'Dish {id_} deleted')
         else:
-            print(f'{id_} not found')
+            print(f'Dish {id_} not found')
 
 
     
