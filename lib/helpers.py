@@ -10,8 +10,9 @@ def exit_program():
 
 def list_restaurants():
     restaurants = Restaurant.get_all()
-    for restaurant in restaurants:
-        print(restaurant)
+    if restaurants:
+        for restaurant in restaurants:
+            print(restaurant)
     else:
         print('No added Restaurants')
 
@@ -79,8 +80,9 @@ def delete_restaurant():
     
 def list_dishes():
         dish = Dish.get_all()
-        for dish in dish:
-            print(dish)
+        if dish:
+            for dish in dish:
+                print(dish)
         else:
             print('No added Dishes')
 
@@ -151,8 +153,8 @@ def delete_dish():
 def list_dishes_by_restaurant_id():
         id_ = input('Enter the id of the Restaurant: ')
         if dish := Restaurant.find_by_id(id_):
-            dishes = Dish.get_dishes()
-            for dish in dishes:
+            dish = Dish.get_all()
+            for dish in dish:
                 print(dish)
         else:
             print(f'Restaurant {id_} not found')
